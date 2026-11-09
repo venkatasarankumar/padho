@@ -181,3 +181,4 @@ In compliance with strict educational standards:
 - **Textbook repositories** link directly to official NCERT portals (`ncert.nic.in`).
 - **Telugu educational content** provides genuine curriculum notes for Telugu medium aspirants.
 MaheshPondara/padho
+Venkatasarankumar/padho
