@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Free Student Account | PADHO</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <div class="nav-actions">
+        <span style="font-size:0.9rem; color:var(--text-secondary);">Already registered?</span>
+        <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Auth Layout -->
+  <main class="auth-wrapper">
+    <div class="auth-container">
+      <!-- Left Editorial Banner -->
+      <div class="auth-banner">
+        <div>
+          <span class="badge" style="background: rgba(255,255,255,0.15); color: #FFFFFF; margin-bottom: 20px;">Free Student Registration</span>
+          <h2 class="auth-banner-title">Start Your Competitive Exam Prep Free.</h2>
+          <p class="auth-banner-desc">Designed specifically for students after 10th standard and Intermediate preparing for Engineering, SSC, Banking, and Railway examinations.</p>
+        </div>
+
+        <ul class="auth-value-props">
+          <li>
+            <span class="auth-check-icon">✓</span>
+            <span>Bookmark NCERT chapters and official syllabus documents</span>
+          </li>
+          <li>
+            <span class="auth-check-icon">✓</span>
+            <span>Bilingual learning content in English &amp; తెలుగు</span>
+          </li>
+          <li>
+            <span class="auth-check-icon">✓</span>
+            <span>No paid subscriptions or hidden promotional feeds</span>
+          </li>
+        </ul>
+
+        <div style="font-size: 0.85rem; color: #CAD5CE;">
+          PADHO — Empowering every student with equal access to education.
+        </div>
+      </div>
+
+      <!-- Right Form Card -->
+      <div class="auth-form-card">
+        <div class="auth-header">
+          <h1 class="auth-title">Create Account</h1>
+          <p class="auth-subtitle">Join the free digital platform for competitive examination preparation.</p>
+        </div>
+
+        <div id="registerAlertBox" class="alert alert-danger" style="display: none;"></div>
+
+        <form id="registerForm">
+          <div class="form-group">
+            <label class="form-label" for="regName">Full Name <span class="required">*</span></label>
+            <input type="text" id="regName" class="form-control" placeholder="e.g. Ramesh Reddy" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regEmail">Email Address <span class="required">*</span></label>
+            <input type="email" id="regEmail" class="form-control" placeholder="name@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regPassword">Password <span class="required">*</span></label>
+            <input type="password" id="regPassword" class="form-control" placeholder="At least 6 characters" required autocomplete="new-password">
+            <div class="form-help">Must be at least 6 characters.</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="regConfirmPassword">Confirm Password <span class="required">*</span></label>
+            <input type="password" id="regConfirmPassword" class="form-control" placeholder="Re-enter your password" required autocomplete="new-password">
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label" style="font-size: 0.86rem;">
+              <input type="checkbox" id="regTerms" required>
+              <span>I agree to PADHO's commitment to honest, free educational resources.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="registerSubmitBtn">
+            Complete Registration
+          </button>
+        </form>
+
+        <div class="auth-footer-link">
+          Already have an account? <a href="login.html">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

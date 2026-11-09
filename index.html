@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PADHO — Learn. Prepare. Grow. | Free Competitive Exam Platform</title>
+  <meta name="description" content="PADHO is a free digital platform for competitive examination preparation. Access verified syllabi, NCERT resources, and bilingual learning materials in English and Telugu.">
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside style="background-color: var(--brand-primary); color: #D6E7D8; font-size: 0.82rem; padding: 7px 0; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <div class="container flex items-center justify-between">
+      <span>✨ 100% Free Educational Resources for Students After 10th &amp; Intermediate</span>
+      <span style="font-weight: 600;">Available in English &amp; తెలుగు</span>
+    </div>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="PADHO Home">
+        <img src="assets/icons/padho-logo.svg" alt="PADHO Logo">
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="examinations.html" class="nav-link">Examinations</a></li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Language & Auth) -->
+      <div class="nav-actions">
+        <!-- Bilingual Toggle -->
+        <button type="button" class="lang-selector-btn" title="Toggle English / తెలుగు Language">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+
+        <!-- Dynamic Auth Section populated by auth.js -->
+        <div id="navAuthSection"></div>
+
+        <!-- Mobile Drawer Toggle -->
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="assets/icons/padho-logo.svg" alt="PADHO" style="height: 34px;">
+      <button type="button" class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="examinations.html">Examinations</a></li>
+      <li><a href="resources.html">Resources Library</a></li>
+      <li><a href="about.html">About PADHO</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="dashboard.html">Student Dashboard</a></li>
+    </ul>
+    <div class="drawer-actions">
+      <a href="login.html" class="btn btn-outline btn-full">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-full">Register Free</a>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="section" style="padding-top: 60px; padding-bottom: 70px;">
+      <div class="container">
+        <div class="grid-2 hero-grid" style="align-items: center; gap: 48px;">
+          <!-- Left Column: Copy -->
+          <div>
+            <div class="eyebrow spark-accent">
+              <span>●</span> A Free Digital Platform for Competitive Exam Preparation
+            </div>
+            <h1 class="hero-title" style="margin-bottom: 20px;">
+              Your Free Educational Platform for Competitive Exam Preparation.
+            </h1>
+            <p class="hero-description" style="font-size: 1.15rem; line-height: 1.65; margin-bottom: 32px; color: var(--text-secondary);">
+              PADHO consolidates scattered examination notifications, official syllabi, NCERT references, and structured bilingual study materials in English and Telugu — 100% free for students after 10th and Intermediate.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex items-center gap-md hero-cta-group" style="margin-bottom: 36px;">
+              <a href="examinations.html" class="btn btn-primary btn-lg">
+                Explore Examinations
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="resources.html" class="btn btn-secondary btn-lg">
+                Browse Resources
+              </a>
+            </div>
+
+            <!-- Value Highlights -->
+            <div class="flex flex-wrap items-center gap-md hero-features-list" style="font-size: 0.88rem; color: var(--text-main); font-weight: 600;">
+              <div class="flex items-center gap-sm">
+                <span style="color: var(--brand-secondary);">✓</span> Verified Official Portals
+              </div>
+              <div class="flex items-center gap-sm">
+                <span style="color: var(--brand-secondary);">✓</span> NCERT Curricula
+              </div>
+              <div class="flex items-center gap-sm">
+                <span style="color: var(--brand-secondary);">✓</span> Telugu &amp; English Media
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Hero Startup Illustration -->
+          <div style="display: flex; justify-content: center;">
+            <img src="assets/illustrations/hero-student.svg" alt="PADHO Digital Educational Learning Platform" class="hero-illustration" style="width: 100%; max-width: 520px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem & Purpose Section -->
+    <section class="section-sm" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Why PADHO Exists</span>
+          <h2 class="section-title">Solving Competitive Examination Barriers</h2>
+          <p class="section-desc">Students frequently struggle with scattered notifications, unverified coaching materials, and language barriers.</p>
+        </div>
+
+        <div class="grid-4 stagger-container">
+          <div class="padho-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h4 class="card-title">Centralized Discovery</h4>
+            <p class="card-desc">No more navigating dozens of confusing websites. Find JEE, SSC, Banking, and Railway guidelines in one place.</p>
+          </div>
+
+          <div class="padho-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h4 class="card-title">Verified Official Links</h4>
+            <p class="card-desc">Direct access to official examination portals (NTA, SSC, IBPS, RRB) with genuine notifications only.</p>
+          </div>
+
+          <div class="padho-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h4 class="card-title">Bilingual Learning</h4>
+            <p class="card-desc">Complete support for English and Telugu medium students so language is never a hurdle to learning.</p>
+          </div>
+
+          <div class="padho-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h4 class="card-title">100% Free Forever</h4>
+            <p class="card-desc">Democratizing education with zero paywalls, subscriptions, or hidden charges for any student.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Examination Streams Section -->
+    <section class="section">
+      <div class="container">
+        <div class="flex items-center justify-between section-header" style="flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="eyebrow">Comprehensive Coverage</span>
+            <h2 class="section-title">Major Competitive Examinations</h2>
+            <p class="section-desc">Structured roadmaps, eligibility criteria, and syllabus breakdowns for India's premier exams.</p>
+          </div>
+          <a href="examinations.html" class="btn btn-outline">View All Examinations →</a>
+        </div>
+
+        <div class="grid-3">
+          <!-- Engineering: JEE Main -->
+          <div class="exam-card">
+            <div class="exam-card-header">
+              <div class="card-icon-wrap" style="width:44px; height:44px; margin-bottom:0;">
+                <img src="assets/icons/exam-engineering.svg" alt="Engineering" style="width:28px;">
+              </div>
+              <span class="badge badge-emerald">Engineering</span>
+            </div>
+            <h3 class="exam-card-title">JEE Main</h3>
+            <p class="card-desc">Joint Entrance Examination conducted by NTA for admission into NITs, IIITs, CFTIs, and qualifying for JEE Advanced.</p>
+            <div class="exam-card-meta">
+              <div><strong>Level:</strong> Class 12 / Intermediate</div>
+              <div><strong>Subjects:</strong> Physics, Chemistry, Math</div>
+            </div>
+            <div class="flex items-center justify-between" style="margin-top:auto; padding-top:12px;">
+              <a href="examination-details.html?id=jee-main" class="btn btn-outline btn-sm">Syllabus &amp; Structure</a>
+              <a href="https://jeemain.nta.ac.in" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Official NTA ↗</a>
+            </div>
+          </div>
+
+          <!-- Staff Selection Commission: SSC -->
+          <div class="exam-card">
+            <div class="exam-card-header">
+              <div class="card-icon-wrap" style="width:44px; height:44px; margin-bottom:0;">
+                <img src="assets/icons/exam-ssc.svg" alt="SSC" style="width:28px;">
+              </div>
+              <span class="badge badge-emerald">Staff Selection</span>
+            </div>
+            <h3 class="exam-card-title">SSC CGL &amp; CHSL</h3>
+            <p class="card-desc">National recruitment examinations by the Staff Selection Commission for Group B &amp; C central administrative services.</p>
+            <div class="exam-card-meta">
+              <div><strong>Level:</strong> 12th Pass &amp; Graduates</div>
+              <div><strong>Subjects:</strong> Quant, Reasoning, English, GA</div>
+            </div>
+            <div class="flex items-center justify-between" style="margin-top:auto; padding-top:12px;">
+              <a href="examination-details.html?id=ssc-cgl" class="btn btn-outline btn-sm">Syllabus &amp; Structure</a>
+              <a href="https://ssc.gov.in" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Official SSC ↗</a>
+            </div>
+          </div>
+
+          <!-- Banking: IBPS & SBI -->
+          <div class="exam-card">
+            <div class="exam-card-header">
+              <div class="card-icon-wrap" style="width:44px; height:44px; margin-bottom:0;">
+                <img src="assets/icons/exam-banking.svg" alt="Banking" style="width:28px;">
+              </div>
+              <span class="badge badge-emerald">Banking</span>
+            </div>
+            <h3 class="exam-card-title">Banking (IBPS &amp; SBI)</h3>
+            <p class="card-desc">Probationary Officers and Clerical examinations conducted by IBPS and State Bank of India across public sector banks.</p>
+            <div class="exam-card-meta">
+              <div><strong>Level:</strong> Graduate Degree</div>
+              <div><strong>Subjects:</strong> Aptitude, Reasoning, Banking</div>
+            </div>
+            <div class="flex items-center justify-between" style="margin-top:auto; padding-top:12px;">
+              <a href="examination-details.html?id=banking-exams" class="btn btn-outline btn-sm">Syllabus &amp; Structure</a>
+              <a href="https://www.ibps.in" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Official IBPS ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bilingual Learning Feature Banner -->
+    <section class="section" style="background-color: var(--brand-primary); color: #FFFFFF;">
+      <div class="container">
+        <div class="grid-2" style="align-items: center; gap: 48px;">
+          <div>
+            <span class="eyebrow" style="background-color: rgba(214, 231, 216, 0.15); color: var(--highlight);">ద్విభాషా వనరులు • Bilingual Access</span>
+            <h2 style="color: #FFFFFF; font-size: 2.3rem; margin: 16px 0;">
+              Study in Your Preferred Language: English &amp; తెలుగు.
+            </h2>
+            <p style="color: #D6E7D8; font-size: 1.1rem; line-height: 1.65; margin-bottom: 24px;">
+              We believe competitive exam clarity shouldn't depend on English fluency alone. PADHO curates high-quality learning resources, concept summaries, and guidance in both English and Telugu.
+            </p>
+            <div class="flex items-center gap-md">
+              <a href="resources.html?lang=Telugu" class="btn btn-gold btn-lg">తెలుగు వనరులు (Telugu Resources)</a>
+              <a href="resources.html?lang=English" class="btn btn-secondary btn-lg" style="background-color: rgba(255,255,255,0.12); color: #FFFFFF;">English Materials</a>
+            </div>
+          </div>
+
+          <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius-lg); padding: 32px;">
+            <h4 style="color: #FFFFFF; margin-bottom: 16px;">Verified Learning Categories</h4>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="padding: 12px 16px; background: rgba(0,0,0,0.15); border-radius: var(--radius-sm); border-left: 3px solid var(--highlight);">
+                <div style="font-weight: 700; color: #FFFFFF;">NCERT Digital Textbooks</div>
+                <div style="font-size: 0.85rem; color: #CAD5CE;">Direct access to NCERT official portal for Classes 11 &amp; 12.</div>
+              </div>
+              <div style="padding: 12px 16px; background: rgba(0,0,0,0.15); border-radius: var(--radius-sm); border-left: 3px solid var(--accent-soft);">
+                <div style="font-weight: 700; color: #FFFFFF;">Concept Handbooks &amp; Formulas</div>
+                <div style="font-size: 0.85rem; color: #CAD5CE;">Quick formulas in Physics, Chemistry, Math, and Quantitative Aptitude.</div>
+              </div>
+              <div style="padding: 12px 16px; background: rgba(0,0,0,0.15); border-radius: var(--radius-sm); border-left: 3px solid var(--highlight);">
+                <div style="font-weight: 700; color: #FFFFFF;">భారత రాజ్యాంగం &amp; జనరల్ అవేర్‌నెస్</div>
+                <div style="font-size: 0.85rem; color: #CAD5CE;">Telugu medium guides for Indian Polity, History, and Science basics.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="section text-center">
+      <div class="container container-narrow">
+        <h2 style="font-size: 2.2rem; margin-bottom: 16px;">Begin Your Competitive Exam Preparation Today</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 32px;">
+          Create a free student account to bookmark study materials, explore subjects, and organize your syllabus journey.
+        </p>
+        <div class="flex justify-center gap-md" style="flex-wrap: wrap;">
+          <a href="register.html" class="btn btn-primary btn-lg">Create Free Student Account</a>
+          <a href="about.html" class="btn btn-outline btn-lg">Learn More About PADHO</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Professional Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/icons/padho-logo.svg" alt="PADHO" style="height: 38px; filter: brightness(0) invert(1);">
+          <p>PADHO is a free digital platform dedicated to empowering students with verified competitive examination information, NCERT resources, and bilingual learning materials.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Examinations</h5>
+          <ul class="footer-links">
+            <li><a href="examination-details.html?id=jee-main">JEE Main</a></li>
+            <li><a href="examination-details.html?id=jee-advanced">JEE Advanced</a></li>
+            <li><a href="examination-details.html?id=ssc-cgl">SSC CGL &amp; CHSL</a></li>
+            <li><a href="examination-details.html?id=banking-exams">Banking (IBPS/SBI)</a></li>
+            <li><a href="examination-details.html?id=railway-rrb">Railway (RRB)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul class="footer-links">
+            <li><a href="resources.html">Resources Library</a></li>
+            <li><a href="resources.html?lang=Telugu">తెలుగు వనరులు</a></li>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Administration</h5>
+          <ul class="footer-links">
+            <li><a href="login.html">Student Sign In</a></li>
+            <li><a href="register.html">Student Registration</a></li>
+            <li><a href="admin/dashboard.html">Admin Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 PADHO. All rights reserved. Free Educational Platform for Students.</div>
+        <div>Educational content verified from official sources (NTA, NCERT, SSC, IBPS, RRB).</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>
+

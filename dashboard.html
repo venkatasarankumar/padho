@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | PADHO — Learn. Prepare. Grow.</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="examinations.html" class="nav-link">Examinations</a></li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <div id="navAuthSection"></div>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="assets/icons/padho-logo.svg" alt="PADHO" style="height: 34px;">
+      <button type="button" class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="dashboard.html" class="active">Student Dashboard</a></li>
+      <li><a href="saved-resources.html">Saved Resources</a></li>
+      <li><a href="examinations.html">Examinations Directory</a></li>
+      <li><a href="resources.html">Resources Library</a></li>
+      <li><a href="about.html">About PADHO</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </aside>
+
+  <!-- Student App Layout -->
+  <div class="app-layout">
+    <!-- Student Sidebar -->
+    <aside class="app-sidebar">
+      <div class="sidebar-user-card">
+        <div class="sidebar-avatar" id="studentAvatarInitial">S</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name" id="studentGreetingName">Student</div>
+          <div class="sidebar-user-role" id="studentUserEmail">student@padho.org</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <a href="dashboard.html" class="sidebar-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Overview
+          </a>
+        </li>
+        <li>
+          <a href="saved-resources.html" class="sidebar-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            Saved Resources
+          </a>
+        </li>
+        <li>
+          <a href="examinations.html" class="sidebar-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 8 8 12 12 16 16 12 12 8"/></svg>
+            Browse Exams
+          </a>
+        </li>
+        <li>
+          <a href="resources.html" class="sidebar-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Resource Library
+          </a>
+        </li>
+        <li>
+          <a href="resources.html?lang=Telugu" class="sidebar-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            తెలుగు వనరులు
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <button type="button" class="btn btn-outline btn-full btn-sm" id="dashboardLogoutBtn">
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- Student Dashboard Content -->
+    <main class="app-content">
+      <div class="dashboard-header">
+        <h1 class="dashboard-greeting">Welcome back, <span id="studentGreetingName">Student</span> 👋</h1>
+        <p class="dashboard-subtext">Access your bookmarked materials and verified competitive examination syllabi.</p>
+      </div>
+
+      <!-- Genuine Real-Data Metrics (strictly no fabricated stats) -->
+      <div class="metrics-row">
+        <div class="metric-card">
+          <div class="metric-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <div class="metric-num" id="countSavedResources">0</div>
+            <div class="metric-label">Saved Resources</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="metric-num" id="countAvailableExams">5</div>
+            <div class="metric-label">Available Exam Streams</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div>
+            <div class="metric-num" id="countAvailableSubjects">7</div>
+            <div class="metric-label">Verified Subjects</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subject Quick Access Pills -->
+      <div style="margin-bottom: 32px;">
+        <h3 style="font-size: 1.35rem; margin-bottom: 14px;">Explore Subjects</h3>
+        <div class="subject-pills-wrap" id="dashboardSubjectPills">
+          <!-- Populated by dashboard.js -->
+        </div>
+      </div>
+
+      <!-- Recently Added Verified Resources -->
+      <div>
+        <div class="flex items-center justify-between" style="margin-bottom: 18px;">
+          <h3 style="font-size: 1.35rem;">Recently Published Resources</h3>
+          <a href="resources.html" class="btn btn-outline btn-sm">Explore All Library Materials →</a>
+        </div>
+        <div class="grid-2" id="dashboardRecentResources">
+          <!-- Populated by dashboard.js -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
+

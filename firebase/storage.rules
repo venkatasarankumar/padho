@@ -1,0 +1,30 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.admin == true || 
+         firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin');
+    }
+
+    // Educational resource documents and PDFs
+    match /educational_resources/{allPaths=**} {
+      // Anyone can read and download published learning files
+      allow read: if true;
+      // Only authorized administrators can upload or delete educational files
+      // Restrict uploads to valid document/image formats and max size 25MB
+      allow write: if isAdmin() &&
+                      request.resource.size < 25 * 1024 * 1024 &&
+                      (request.resource.contentType.matches('application/pdf') ||
+                       request.resource.contentType.matches('image/.*') ||
+                       request.resource.contentType.matches('text/.*'));
+    }
+  }
+}
+

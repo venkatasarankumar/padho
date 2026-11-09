@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Resources | PADHO</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="examinations.html" class="nav-link">Examinations</a></li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <div id="navAuthSection"></div>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="assets/icons/padho-logo.svg" alt="PADHO" style="height: 34px;">
+      <button type="button" class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="saved-resources.html" class="active">Saved Resources</a></li>
+      <li><a href="examinations.html">Examinations</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </aside>
+
+  <!-- Student App Layout -->
+  <div class="app-layout">
+    <!-- Student Sidebar -->
+    <aside class="app-sidebar">
+      <div style="margin-bottom: 24px;">
+        <span class="badge badge-emerald" id="savedCountBadge">Saved Items</span>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <a href="dashboard.html" class="sidebar-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Overview
+          </a>
+        </li>
+        <li>
+          <a href="saved-resources.html" class="sidebar-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            Saved Resources
+          </a>
+        </li>
+        <li>
+          <a href="resources.html" class="sidebar-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Explore Library
+          </a>
+        </li>
+        <li>
+          <a href="examinations.html" class="sidebar-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 8 8 12 12 16 16 12 12 8"/></svg>
+            Examinations
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Content -->
+    <main class="app-content">
+      <div class="dashboard-header flex items-center justify-between" style="flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h1 class="dashboard-greeting">Saved Educational Resources</h1>
+          <p class="dashboard-subtext">Quickly access the textbooks, syllabus guides, and notes you have bookmarked.</p>
+        </div>
+        <a href="resources.html" class="btn btn-primary btn-sm">+ Find More Resources</a>
+      </div>
+
+      <!-- Saved Grid -->
+      <div class="grid-2" id="savedResourcesGrid">
+        <div style="grid-column: 1 / -1; padding: 40px; text-align: center;">
+          <span class="spinner spinner-dark"></span>
+          <p style="margin-top: 12px; color: var(--text-secondary);">Loading your bookmarked resources...</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/saved-resources.js"></script>
+</body>
+</html>
+

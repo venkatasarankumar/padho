@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject &amp; Topic Explorer | PADHO</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="examinations.html" class="nav-link">Examinations</a></li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="lang-selector-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+        <div id="navAuthSection"></div>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="assets/icons/padho-logo.svg" alt="PADHO" style="height: 34px;">
+      <button type="button" class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="examinations.html">Examinations</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </aside>
+
+  <!-- Breadcrumb -->
+  <nav class="container" style="padding-top: 24px;" aria-label="Breadcrumb">
+    <div style="font-size: 0.88rem; color: var(--text-secondary);">
+      <a href="index.html">Home</a> &nbsp;/&nbsp; 
+      <a href="examinations.html">Examinations</a> &nbsp;/&nbsp; 
+      <span id="breadcrumbSubjectName" style="color: var(--brand-primary); font-weight: 600;">Subject</span>
+    </div>
+  </nav>
+
+  <!-- Subject Content (rendered by js/subject.js) -->
+  <main class="section" style="padding-top: 20px;">
+    <div class="container" id="subjectPageContainer">
+      <div style="padding: 60px; text-align: center;">
+        <span class="spinner spinner-dark"></span>
+        <p style="margin-top: 14px; color: var(--text-secondary);">Loading subject topics and educational materials...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 PADHO. All rights reserved. Free Educational Platform for Students.</div>
+        <div><a href="resources.html">Browse All Educational Resources</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/subject.js"></script>
+</body>
+</html>

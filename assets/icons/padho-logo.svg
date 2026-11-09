@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <!-- Padho Logo Icon -->
+  <g transform="translate(4, 8)">
+    <!-- Book/Sprout base -->
+    <rect x="0" y="0" width="48" height="48" rx="12" fill="#153D32"/>
+    <!-- Open Book Leaf Left -->
+    <path d="M24 35C20 33 14 33 10 35V19C14 17 20 17 24 19V35Z" fill="#D6E7D8" fill-opacity="0.9"/>
+    <!-- Open Book Leaf Right -->
+    <path d="M24 35C28 33 34 33 38 35V19C34 17 28 17 24 19V35Z" fill="#FFFFFF"/>
+    <!-- Central Sprout / Growth Stem -->
+    <path d="M24 35V14" stroke="#D8A96B" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Golden Knowledge Spark / Sun Dot -->
+    <circle cx="24" cy="11" r="3" fill="#D8A96B"/>
+  </g>
+  <!-- Text: PADHO -->
+  <text x="64" y="38" font-family="'Manrope', -apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="800" fill="#153D32" letter-spacing="-0.5">PADHO</text>
+  <!-- Dot Accent -->
+  <circle cx="178" cy="36" r="3.5" fill="#D8A96B"/>
+  <!-- Tagline below -->
+  <text x="65" y="52" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#727A73" letter-spacing="1.5">LEARN. PREPARE. GROW.</text>
+</svg>
+

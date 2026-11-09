@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Educational Resources | PADHO Admin</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <!-- Admin Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <div class="flex items-center gap-md">
+        <span class="admin-badge">Administrator Portal</span>
+        <a href="../index.html" class="btn btn-outline btn-sm">Public Site ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="app-layout">
+    <aside class="app-sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+        <li><a href="examinations.html" class="sidebar-link">Manage Examinations</a></li>
+        <li><a href="subjects.html" class="sidebar-link">Manage Subjects</a></li>
+        <li><a href="topics.html" class="sidebar-link">Manage Topics</a></li>
+        <li><a href="resources.html" class="sidebar-link active">Manage Resources</a></li>
+        <li><a href="upload-resource.html" class="sidebar-link">Upload Resource</a></li>
+        <li><a href="messages.html" class="sidebar-link">Contact Messages</a></li>
+        <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="app-content">
+      <div class="dashboard-header flex items-center justify-between" style="flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h1 class="dashboard-greeting">Manage Educational Resources</h1>
+          <p class="dashboard-subtext">Publish, modify, or archive study materials, NCERT references, and syllabi.</p>
+        </div>
+        <a href="upload-resource.html" class="btn btn-primary btn-sm">+ Upload New Resource</a>
+      </div>
+
+      <!-- Resources Table -->
+      <div class="table-responsive">
+        <table class="padho-table">
+          <thead>
+            <tr>
+              <th>Title &amp; Level</th>
+              <th>Examination</th>
+              <th>Subject</th>
+              <th>Language</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminResourcesTableBody">
+            <!-- Populated by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
+

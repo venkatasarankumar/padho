@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Messages | PADHO Admin</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <!-- Admin Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <div class="flex items-center gap-md">
+        <span class="admin-badge">Administrator Portal</span>
+        <a href="../index.html" class="btn btn-outline btn-sm">Public Site ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="app-layout">
+    <aside class="app-sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+        <li><a href="examinations.html" class="sidebar-link">Manage Examinations</a></li>
+        <li><a href="subjects.html" class="sidebar-link">Manage Subjects</a></li>
+        <li><a href="topics.html" class="sidebar-link">Manage Topics</a></li>
+        <li><a href="resources.html" class="sidebar-link">Manage Resources</a></li>
+        <li><a href="upload-resource.html" class="sidebar-link">Upload Resource</a></li>
+        <li><a href="messages.html" class="sidebar-link active">Contact Messages</a></li>
+        <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="app-content">
+      <div class="dashboard-header">
+        <h1 class="dashboard-greeting">Student Inquiries &amp; Feedback</h1>
+        <p class="dashboard-subtext">Manage incoming messages submitted through the public contact form.</p>
+      </div>
+
+      <!-- Messages Table -->
+      <div class="table-responsive">
+        <table class="padho-table">
+          <thead>
+            <tr>
+              <th>Sender</th>
+              <th>Email</th>
+              <th>Message Snippet</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminMessagesTableBody">
+            <!-- Populated by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Message Detail Modal -->
+  <div class="modal-overlay" id="messageDetailModal">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="closeMsgModalBtn">&times;</button>
+      <h3 style="margin-bottom:4px;">Inquiry Details</h3>
+      <div style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:18px;">
+        <span id="msgModalSender">Sender</span> • <span id="msgModalDate">Date</span>
+      </div>
+      <div style="background:var(--bg-primary); padding:18px; border-radius:var(--radius-sm); border:1px solid var(--border-color); font-size:0.95rem; line-height:1.6; margin-bottom:24px; white-space:pre-wrap;" id="msgModalContent">
+        Message text goes here...
+      </div>
+      <div class="flex justify-between">
+        <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('messageDetailModal').classList.remove('open')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings & Firebase Configuration | PADHO Admin</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <!-- Admin Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <div class="flex items-center gap-md">
+        <span class="admin-badge">Administrator Portal</span>
+        <a href="../index.html" class="btn btn-outline btn-sm">Public Site ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="app-layout">
+    <aside class="app-sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+        <li><a href="examinations.html" class="sidebar-link">Manage Examinations</a></li>
+        <li><a href="subjects.html" class="sidebar-link">Manage Subjects</a></li>
+        <li><a href="topics.html" class="sidebar-link">Manage Topics</a></li>
+        <li><a href="resources.html" class="sidebar-link">Manage Resources</a></li>
+        <li><a href="upload-resource.html" class="sidebar-link">Upload Resource</a></li>
+        <li><a href="messages.html" class="sidebar-link">Contact Messages</a></li>
+        <li><a href="settings.html" class="sidebar-link active">Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="app-content" id="adminSettingsContainer">
+      <div class="dashboard-header">
+        <h1 class="dashboard-greeting">Settings &amp; Firebase Backend</h1>
+        <p class="dashboard-subtext">Manage live cloud credentials, database integrity, and system diagnostics.</p>
+      </div>
+
+      <!-- Backend Connection Diagnostics Card -->
+      <div class="diag-card">
+        <div class="flex items-center justify-between" style="margin-bottom:16px;">
+          <h3 style="font-size:1.2rem;">Backend Integration Status</h3>
+          <span id="firebaseStatusBadge" class="badge badge-emerald">Checking connection...</span>
+        </div>
+        <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:20px;">
+          PADHO connects to Google Firebase for Cloud Firestore (data), Firebase Authentication (users), and Firebase Storage (educational documents).
+        </p>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label" for="settingApiKey">Firebase API Key</label>
+            <input type="text" id="settingApiKey" class="form-control" placeholder="AIzaSy...">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="settingProjectId">Firebase Project ID</label>
+            <input type="text" id="settingProjectId" class="form-control" placeholder="padho-education">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="settingStorageBucket">Firebase Storage Bucket</label>
+          <input type="text" id="settingStorageBucket" class="form-control" placeholder="padho-education.appspot.com">
+        </div>
+
+        <button type="button" class="btn btn-primary btn-sm" id="saveFirebaseConfigBtn">
+          Save Firebase Credentials
+        </button>
+      </div>
+
+      <!-- Strict Educational Data Integrity Card -->
+      <div class="diag-card">
+        <h3 style="font-size:1.2rem; margin-bottom:8px;">Database Verification &amp; Official Seed</h3>
+        <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:18px;">
+          Ensure that no fake student accounts, invented test scores, or fabricated question papers contaminate the platform. You can restore the database to verified official standards at any time.
+        </p>
+        <button type="button" class="btn btn-outline btn-sm" id="resetVerifiedSeedBtn">
+          Restore Official Verified Dataset (NTA, NCERT, SSC, IBPS, RRB)
+        </button>
+      </div>
+
+      <!-- System Architecture Info -->
+      <div class="diag-card">
+        <h3 style="font-size:1.2rem; margin-bottom:12px;">Architecture Specifications</h3>
+        <div class="diag-item">
+          <span>Frontend Framework</span>
+          <strong>Pure HTML5, CSS3 &amp; Vanilla JavaScript (ES6+)</strong>
+        </div>
+        <div class="diag-item">
+          <span>Design System</span>
+          <strong>Modern Minimal Emerald Green (#153D32, #F5F4EF, #D8A96B)</strong>
+        </div>
+        <div class="diag-item">
+          <span>Cloud Database</span>
+          <strong>Google Cloud Firestore Collections (NoSQL)</strong>
+        </div>
+        <div class="diag-item">
+          <span>File Storage</span>
+          <strong>Firebase Storage (Documents &amp; PDFs)</strong>
+        </div>
+        <div class="diag-item">
+          <span>Security Rules</span>
+          <strong>Role-Based Access Control (RBAC) Deployed</strong>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
+

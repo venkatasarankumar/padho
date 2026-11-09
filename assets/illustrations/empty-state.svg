@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 180" fill="none">
+  <circle cx="120" cy="90" r="70" fill="#D6E7D8" fill-opacity="0.35"/>
+  <rect x="75" y="45" width="90" height="95" rx="10" fill="#FFFFFF" stroke="#E6E8E2" stroke-width="2"/>
+  <line x1="95" y1="70" x2="145" y2="70" stroke="#E6E8E2" stroke-width="3" stroke-linecap="round"/>
+  <line x1="95" y1="85" x2="135" y2="85" stroke="#E6E8E2" stroke-width="3" stroke-linecap="round"/>
+  <line x1="95" y1="100" x2="125" y2="100" stroke="#E6E8E2" stroke-width="3" stroke-linecap="round"/>
+  <!-- Magnifying glass or book open -->
+  <circle cx="145" cy="115" r="18" fill="#153D32"/>
+  <path d="M140 115 L143 118 L151 110" stroke="#D8A96B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="158" y1="128" x2="172" y2="142" stroke="#153D32" stroke-width="4" stroke-linecap="round"/>
+</svg>
+

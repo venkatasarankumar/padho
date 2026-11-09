@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Educational Resource | PADHO Admin</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <!-- Admin Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <div class="flex items-center gap-md">
+        <span class="admin-badge">Administrator Portal</span>
+        <a href="../index.html" class="btn btn-outline btn-sm">Public Site ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="app-layout">
+    <aside class="app-sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+        <li><a href="examinations.html" class="sidebar-link">Manage Examinations</a></li>
+        <li><a href="subjects.html" class="sidebar-link">Manage Subjects</a></li>
+        <li><a href="topics.html" class="sidebar-link">Manage Topics</a></li>
+        <li><a href="resources.html" class="sidebar-link">Manage Resources</a></li>
+        <li><a href="upload-resource.html" class="sidebar-link active">Upload Resource</a></li>
+        <li><a href="messages.html" class="sidebar-link">Contact Messages</a></li>
+        <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="app-content">
+      <div class="dashboard-header">
+        <h1 class="dashboard-greeting">Upload Verified Educational Resource</h1>
+        <p class="dashboard-subtext">Add syllabus guides, textbook links, or verified study materials for students.</p>
+      </div>
+
+      <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:36px; max-width:860px;">
+        <form id="adminUploadForm">
+          <!-- Resource Title -->
+          <div class="form-group">
+            <label class="form-label" for="uploadTitle">Resource Title <span class="required">*</span></label>
+            <input type="text" id="uploadTitle" class="form-control" placeholder="e.g. NCERT Class 11 Physics Textbook (Part 1)" required>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label class="form-label" for="uploadDescription">Detailed Description <span class="required">*</span></label>
+            <textarea id="uploadDescription" class="form-control" rows="3" placeholder="Explain the contents, chapters covered, and how students should use this material..." required></textarea>
+          </div>
+
+          <!-- Exam & Subject Row -->
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="uploadExamSelect">Target Examination <span class="required">*</span></label>
+              <select id="uploadExamSelect" class="form-control" required></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="uploadSubjSelect">Curriculum Subject <span class="required">*</span></label>
+              <select id="uploadSubjSelect" class="form-control" required></select>
+            </div>
+          </div>
+
+          <!-- Topic & Education Level -->
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="uploadTopicSelect">Associated Topic (Optional)</label>
+              <select id="uploadTopicSelect" class="form-control"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="uploadEduLevel">Target Education Level <span class="required">*</span></label>
+              <select id="uploadEduLevel" class="form-control" required>
+                <option value="12th / Intermediate">12th / Intermediate</option>
+                <option value="10th">10th Standard</option>
+                <option value="Graduate">Graduate / Degree</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Language & Resource Type -->
+          <div class="grid-2">
+            <div class="form-group">
+              <label class="form-label" for="uploadLanguage">Medium / Language <span class="required">*</span></label>
+              <select id="uploadLanguage" class="form-control" required>
+                <option value="English">English</option>
+                <option value="Telugu">తెలుగు (Telugu)</option>
+                <option value="Bilingual">Bilingual (English + Telugu)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="uploadResourceType">Resource Type <span class="required">*</span></label>
+              <select id="uploadResourceType" class="form-control" required>
+                <option value="NCERT">NCERT Textbook</option>
+                <option value="Study Material">Study Material &amp; Formulas</option>
+                <option value="Syllabus">Official Syllabus</option>
+                <option value="Verified PYQ">Verified Previous Year Questions</option>
+                <option value="Practice">Practice Questions</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- File Upload Dropzone (Firebase Storage) -->
+          <div class="form-group">
+            <label class="form-label">Upload File / Document (PDF, Document, or Educational Image)</label>
+            <div class="upload-dropzone" id="uploadDropzone">
+              <input type="file" id="uploadFileInput" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" style="display:none;">
+              <div class="upload-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              </div>
+              <div class="upload-title">Choose a file or drag and drop here</div>
+              <div class="upload-subtitle">PDF, PNG, JPG up to 25MB (stored securely in Firebase Storage)</div>
+            </div>
+
+            <div class="file-preview-card" id="filePreviewCard" style="display:none;">
+              <div class="file-preview-info">
+                <span>📄</span>
+                <div>
+                  <div class="file-name" id="previewFileName">filename.pdf</div>
+                  <div class="file-size" id="previewFileSize">1.2 MB</div>
+                </div>
+              </div>
+              <button type="button" class="file-remove-btn" id="removeFileBtn" title="Remove file">&times;</button>
+            </div>
+          </div>
+
+          <!-- External Portal URL -->
+          <div class="form-group">
+            <label class="form-label" for="uploadExternalUrl">External Official URL (Optional)</label>
+            <input type="url" id="uploadExternalUrl" class="form-control" placeholder="https://ncert.nic.in/textbook.php...">
+            <div class="form-help">If the resource is hosted on an official government or NCERT portal, provide the verified URL.</div>
+          </div>
+
+          <!-- Publication Checkbox -->
+          <div class="form-group">
+            <label class="checkbox-label" style="font-weight:600;">
+              <input type="checkbox" id="uploadPublishedCheck" checked>
+              <span>Publish immediately to student library</span>
+            </label>
+          </div>
+
+          <div class="flex items-center gap-md" style="margin-top:28px;">
+            <button type="submit" class="btn btn-primary btn-lg">Publish Educational Resource</button>
+            <a href="resources.html" class="btn btn-outline btn-lg">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
+

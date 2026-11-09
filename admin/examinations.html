@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Examinations | PADHO Admin</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <!-- Admin Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <div class="flex items-center gap-md">
+        <span class="admin-badge">Administrator Portal</span>
+        <a href="../index.html" class="btn btn-outline btn-sm">Public Site ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="app-layout">
+    <aside class="app-sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+        <li><a href="examinations.html" class="sidebar-link active">Manage Examinations</a></li>
+        <li><a href="subjects.html" class="sidebar-link">Manage Subjects</a></li>
+        <li><a href="topics.html" class="sidebar-link">Manage Topics</a></li>
+        <li><a href="resources.html" class="sidebar-link">Manage Resources</a></li>
+        <li><a href="upload-resource.html" class="sidebar-link">Upload Resource</a></li>
+        <li><a href="messages.html" class="sidebar-link">Contact Messages</a></li>
+        <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="app-content">
+      <div class="dashboard-header flex items-center justify-between" style="flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h1 class="dashboard-greeting">Manage Competitive Examinations</h1>
+          <p class="dashboard-subtext">Add or update official examination details, eligibility criteria, and syllabus outlines.</p>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" id="openAddExamModalBtn">+ Add Examination</button>
+      </div>
+
+      <div class="table-responsive">
+        <table class="padho-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Official Portal</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminExamsTableBody">
+            <!-- Populated by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add/Edit Examination Modal -->
+  <div class="modal-overlay" id="examModal">
+    <div class="modal-card" style="max-width: 640px;">
+      <button type="button" class="modal-close" id="closeExamModalBtn">&times;</button>
+      <h3 style="margin-bottom: 8px;">Examination Record</h3>
+      <p style="color:var(--text-secondary); font-size:0.88rem; margin-bottom:20px;">
+        Provide verified official details. Do not invent criteria or unverified exam dates.
+      </p>
+
+      <form id="examModalForm">
+        <input type="hidden" id="modalExamId">
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label" for="modalExamTitle">Examination Title <span class="required">*</span></label>
+            <input type="text" id="modalExamTitle" class="form-control" placeholder="e.g. JEE Main" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modalExamCategory">Stream Category <span class="required">*</span></label>
+            <select id="modalExamCategory" class="form-control" required>
+              <option value="Engineering">Engineering Entrance</option>
+              <option value="SSC">Staff Selection (SSC)</option>
+              <option value="Banking">Banking (IBPS &amp; SBI)</option>
+              <option value="Railway">Railway Recruitment (RRB)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalExamDesc">Description / Overview <span class="required">*</span></label>
+          <textarea id="modalExamDesc" class="form-control" rows="3" placeholder="Brief official introduction..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalExamEligibility">Eligibility Information <span class="required">*</span></label>
+          <textarea id="modalExamEligibility" class="form-control" rows="2" placeholder="Age limit, education qualifications..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalExamStructure">Examination Pattern &amp; Structure</label>
+          <textarea id="modalExamStructure" class="form-control" rows="2" placeholder="CBT papers, marking scheme..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalExamWebsite">Official Website URL <span class="required">*</span></label>
+          <input type="url" id="modalExamWebsite" class="form-control" placeholder="https://jeemain.nta.ac.in" required>
+        </div>
+
+        <div class="flex justify-between" style="margin-top: 24px;">
+          <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('examModal').classList.remove('open')">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save Examination</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
+

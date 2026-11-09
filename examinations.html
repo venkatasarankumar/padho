@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competitive Examinations Directory | PADHO</title>
+  <meta name="description" content="Discover major competitive examinations in India: JEE Main, JEE Advanced, SSC CGL/CHSL, Banking (IBPS/SBI), and Railway (RRB). Access verified syllabi and eligibility.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="examinations.html" class="nav-link active">Examinations</a></li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="lang-selector-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+        <div id="navAuthSection"></div>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="assets/icons/padho-logo.svg" alt="PADHO" style="height: 34px;">
+      <button type="button" class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="examinations.html" class="active">Examinations</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </aside>
+
+  <!-- Examinations Explorer Header -->
+  <main class="section" style="padding-top: 50px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Comprehensive Directory</span>
+        <h1 class="section-title">Competitive Examination Portals</h1>
+        <p class="section-desc">
+          Official eligibility criteria, exam structures, and verified syllabi for Indian national competitive examinations.
+        </p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-pills">
+        <button type="button" class="filter-pill exam-filter-pill active" data-category="all">All Examinations</button>
+        <button type="button" class="filter-pill exam-filter-pill" data-category="Engineering">Engineering Entrance</button>
+        <button type="button" class="filter-pill exam-filter-pill" data-category="SSC">Staff Selection (SSC)</button>
+        <button type="button" class="filter-pill exam-filter-pill" data-category="Banking">Banking (IBPS &amp; SBI)</button>
+        <button type="button" class="filter-pill exam-filter-pill" data-category="Railway">Railway Recruitment (RRB)</button>
+      </div>
+
+      <!-- Dynamic Grid loaded by examinations.js -->
+      <div class="grid-3" id="examsGrid">
+        <div style="grid-column: 1 / -1; padding: 40px; text-align: center;">
+          <span class="spinner spinner-dark"></span>
+          <p style="margin-top: 12px; color: var(--text-secondary);">Loading examinations directory...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 PADHO. All rights reserved. Free Educational Platform for Students.</div>
+        <div>All examination links navigate to official, verified government portals.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/examinations.js"></script>
+</body>
+</html>
+

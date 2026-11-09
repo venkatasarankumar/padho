@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Topics | PADHO Admin</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+  <!-- Admin Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <div class="flex items-center gap-md">
+        <span class="admin-badge">Administrator Portal</span>
+        <a href="../index.html" class="btn btn-outline btn-sm">Public Site ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Admin Layout -->
+  <div class="app-layout">
+    <aside class="app-sidebar">
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="sidebar-link">Dashboard</a></li>
+        <li><a href="examinations.html" class="sidebar-link">Manage Examinations</a></li>
+        <li><a href="subjects.html" class="sidebar-link">Manage Subjects</a></li>
+        <li><a href="topics.html" class="sidebar-link active">Manage Topics</a></li>
+        <li><a href="resources.html" class="sidebar-link">Manage Resources</a></li>
+        <li><a href="upload-resource.html" class="sidebar-link">Upload Resource</a></li>
+        <li><a href="messages.html" class="sidebar-link">Contact Messages</a></li>
+        <li><a href="settings.html" class="sidebar-link">Settings</a></li>
+      </ul>
+    </aside>
+
+    <main class="app-content">
+      <div class="dashboard-header">
+        <h1 class="dashboard-greeting">Manage Syllabus Topics</h1>
+        <p class="dashboard-subtext">Structure chapter-level breakdowns for each curriculum subject.</p>
+      </div>
+
+      <!-- Add Topic Form Card -->
+      <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:24px; margin-bottom:32px;">
+        <h3 style="font-size:1.15rem; margin-bottom:16px;">Add New Topic</h3>
+        <form id="addTopicForm" class="grid-3" style="align-items:flex-end;">
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="topicSubjectSelect">Parent Subject <span class="required">*</span></label>
+            <select id="topicSubjectSelect" class="form-control" required></select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="topicTitle">Topic / Chapter Title <span class="required">*</span></label>
+            <input type="text" id="topicTitle" class="form-control" placeholder="e.g. Kinematics" required>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="topicDesc">Core Concepts <span class="required">*</span></label>
+            <input type="text" id="topicDesc" class="form-control" placeholder="Sub-topics covered..." required>
+          </div>
+          <div style="grid-column: 1 / -1; margin-top:12px;">
+            <button type="submit" class="btn btn-primary btn-sm">+ Save Topic</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Topics Table -->
+      <div class="table-responsive">
+        <table class="padho-table">
+          <thead>
+            <tr>
+              <th>Topic Title</th>
+              <th>Subject</th>
+              <th>Concepts Covered</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="adminTopicsTableBody">
+            <!-- Populated by admin.js -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
+

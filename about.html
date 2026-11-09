@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About PADHO — Our Purpose, Mission & Commitment</title>
+  <meta name="description" content="Learn why PADHO was created: a free digital platform bridging educational inequality in competitive examination preparation for Indian students.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icons/padho-logo.svg" alt="PADHO">
+      </a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="examinations.html" class="nav-link">Examinations</a></li>
+          <li><a href="resources.html" class="nav-link">Resources</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="lang-selector-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-label">English</span>
+        </button>
+        <div id="navAuthSection"></div>
+        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="assets/icons/padho-logo.svg" alt="PADHO" style="height: 34px;">
+      <button type="button" class="drawer-close" id="drawerClose">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="examinations.html">Examinations</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </aside>
+
+  <!-- About Hero -->
+  <main>
+    <section class="section" style="padding-top: 60px; padding-bottom: 50px;">
+      <div class="container container-narrow text-center">
+        <span class="eyebrow">Our Mission &amp; Philosophy</span>
+        <h1 style="margin-bottom: 20px;">Democratizing Competitive Exam Education for Every Student.</h1>
+        <p style="font-size: 1.2rem; line-height: 1.7; color: var(--text-secondary);">
+          PADHO is a free digital platform built to solve the fragmentation, commercialization, and linguistic exclusion that students encounter when preparing for major competitive examinations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why PADHO was created -->
+    <section class="section" style="background-color: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="grid-2" style="align-items: center; gap: 48px;">
+          <div>
+            <span class="eyebrow">The Real Problem</span>
+            <h2 style="margin-bottom: 18px;">Why We Built PADHO</h2>
+            <p style="margin-bottom: 16px; font-size: 1.05rem;">
+              Millions of students across India complete 10th standard and Intermediate with the ambition of entering engineering, government administration, banking, or railway careers. However, they encounter severe hurdles:
+            </p>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+              <li style="display: flex; gap: 10px; font-size: 0.95rem;">
+                <span style="color: var(--brand-secondary); font-weight: 700;">•</span>
+                <span><strong>Scattered Information:</strong> Crucial eligibility rules and syllabus notices are dispersed across confusing government portals.</span>
+              </li>
+              <li style="display: flex; gap: 10px; font-size: 0.95rem;">
+                <span style="color: var(--brand-secondary); font-weight: 700;">•</span>
+                <span><strong>Commercial Paywalls:</strong> Commercial institutes charge exorbitant fees for materials that are essentially based on open NCERT textbooks.</span>
+              </li>
+              <li style="display: flex; gap: 10px; font-size: 0.95rem;">
+                <span style="color: var(--brand-secondary); font-weight: 700;">•</span>
+                <span><strong>Language Barriers:</strong> Talented students studying in vernacular mediums like Telugu often lack structured, high-quality preparation materials in their language.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="padho-card card-featured">
+            <h3 style="margin-bottom: 16px; color: var(--brand-primary);">Our Core Commitments</h3>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="border-left: 3px solid var(--brand-secondary); padding-left: 14px;">
+                <h5 style="margin-bottom: 4px;">100% Free Forever</h5>
+                <p style="font-size: 0.9rem;">Education is a fundamental right. PADHO does not charge students, gatekeep content, or sell private user data.</p>
+              </div>
+              <div style="border-left: 3px solid var(--highlight); padding-left: 14px;">
+                <h5 style="margin-bottom: 4px;">Zero Fabricated Information</h5>
+                <p style="font-size: 0.9rem;">We never invent fake examination notifications, artificial student leaderboards, or false statistics. Every resource is verified.</p>
+              </div>
+              <div style="border-left: 3px solid var(--brand-secondary); padding-left: 14px;">
+                <h5 style="margin-bottom: 4px;">Bilingual Equity</h5>
+                <p style="font-size: 0.9rem;">Dedicated support for both English and Telugu mediums, ensuring conceptual clarity without linguistic disadvantage.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Who PADHO Serves</span>
+          <h2 class="section-title">Designed for Ambitious Aspirants</h2>
+          <p class="section-desc">Tailored specifically for students embarking on their foundational competitive journey.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="padho-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 class="card-title">Students After 10th Standard</h3>
+            <p class="card-desc">Guidance on stream selection, polytechnic routes, foundational NCERT concepts, and early competitive awareness.</p>
+          </div>
+
+          <div class="padho-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="card-title">Intermediate (11th &amp; 12th) Students</h3>
+            <p class="card-desc">In-depth preparation for JEE Main, JEE Advanced, and early central clerical/railway opportunities.</p>
+          </div>
+
+          <div class="padho-card">
+            <div class="card-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7.5" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+            </div>
+            <h3 class="card-title">Government &amp; Banking Aspirants</h3>
+            <p class="card-desc">Syllabus-aligned preparation for SSC CGL, CHSL, IBPS, SBI PO, and RRB recruitments with genuine practice materials.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 PADHO. All rights reserved. Free Educational Platform for Students.</div>
+        <div><a href="contact.html">Get in touch with the PADHO team</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>
+
