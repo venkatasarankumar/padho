@@ -180,5 +180,6 @@ In compliance with strict educational standards:
 - **All 5 examination categories** (JEE Main, JEE Advanced, SSC CGL/CHSL, Banking IBPS/SBI, Railway RRB) contain verified official links to `jeemain.nta.ac.in`, `jeeadv.ac.in`, `ssc.gov.in`, `ibps.in`, and `indianrailways.gov.in`.
 - **Textbook repositories** link directly to official NCERT portals (`ncert.nic.in`).
 - **Telugu educational content** provides genuine curriculum notes for Telugu medium aspirants.
-MaheshPondara/padho
-Venkatasarankumar/padho
+(MaheshPondara/padho)
+(Venkatasarankumar/padho)
+(Kathikeya/padho)
